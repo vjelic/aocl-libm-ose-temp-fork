@@ -38,90 +38,6 @@
                   "DS176209"
                 ]
               }
-            },
-            {
-              "id": "DS176209",
-              "name": "SuspiciousComment",
-              "shortDescription": {
-                "text": "A \"TODO\" or similar was left in source code, possibly indicating incomplete functionality"
-              },
-              "fullDescription": {
-                "text": "Suspicious comment: A \"TODO\" or similar was left in source code, possibly indicating incomplete functionality"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "helpUri": "https://github.com/Microsoft/DevSkim/blob/main/guidance/DS176209.md",
-              "help": {
-                "text": "A \"TODO\" or similar was left in source code, possibly indicating incomplete functionality",
-                "markdown": "Visit [https://github.com/Microsoft/DevSkim/blob/main/guidance/DS176209.md](https://github.com/Microsoft/DevSkim/blob/main/guidance/DS176209.md) for guidance on this issue."
-              },
-              "properties": {
-                "DevSkimSeverity": "ManualReview",
-                "DevSkimConfidence": "High",
-                "precision": "high",
-                "problem.severity": "recommendation",
-                "tags": [
-                  "DS176209"
-                ]
-              }
-            },
-            {
-              "id": "DS176209",
-              "name": "SuspiciousComment",
-              "shortDescription": {
-                "text": "A \"TODO\" or similar was left in source code, possibly indicating incomplete functionality"
-              },
-              "fullDescription": {
-                "text": "Suspicious comment: A \"TODO\" or similar was left in source code, possibly indicating incomplete functionality"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "helpUri": "https://github.com/Microsoft/DevSkim/blob/main/guidance/DS176209.md",
-              "help": {
-                "text": "A \"TODO\" or similar was left in source code, possibly indicating incomplete functionality",
-                "markdown": "Visit [https://github.com/Microsoft/DevSkim/blob/main/guidance/DS176209.md](https://github.com/Microsoft/DevSkim/blob/main/guidance/DS176209.md) for guidance on this issue."
-              },
-              "properties": {
-                "DevSkimSeverity": "ManualReview",
-                "DevSkimConfidence": "High",
-                "precision": "high",
-                "problem.severity": "recommendation",
-                "tags": [
-                  "DS176209"
-                ]
-              }
-            },
-            {
-              "id": "DS176209",
-              "name": "SuspiciousComment",
-              "shortDescription": {
-                "text": "A \"TODO\" or similar was left in source code, possibly indicating incomplete functionality"
-              },
-              "fullDescription": {
-                "text": "Suspicious comment: A \"TODO\" or similar was left in source code, possibly indicating incomplete functionality"
-              },
-              "defaultConfiguration": {
-                "enabled": true,
-                "level": "note"
-              },
-              "helpUri": "https://github.com/Microsoft/DevSkim/blob/main/guidance/DS176209.md",
-              "help": {
-                "text": "A \"TODO\" or similar was left in source code, possibly indicating incomplete functionality",
-                "markdown": "Visit [https://github.com/Microsoft/DevSkim/blob/main/guidance/DS176209.md](https://github.com/Microsoft/DevSkim/blob/main/guidance/DS176209.md) for guidance on this issue."
-              },
-              "properties": {
-                "DevSkimSeverity": "ManualReview",
-                "DevSkimConfidence": "High",
-                "precision": "high",
-                "problem.severity": "recommendation",
-                "tags": [
-                  "DS176209"
-                ]
-              }
             }
           ],
           "language": "en-US",
@@ -145,23 +61,23 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/mul/mul_callback.cc"
+                  "uri": "gtests/include/args.h"
                 },
                 "region": {
-                  "startLine": 114,
-                  "startColumn": 3,
-                  "endLine": 114,
-                  "endColumn": 8,
-                  "charOffset": 3413,
-                  "charLength": 5,
+                  "startLine": 2589,
+                  "startColumn": 34,
+                  "endLine": 2589,
+                  "endColumn": 38,
+                  "charOffset": 85087,
+                  "charLength": 4,
                   "snippet": {
-                    "text": "FIXME",
+                    "text": "TODO",
                     "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
+                      "text": "TODO",
+                      "markdown": "`TODO`"
                     }
                   },
-                  "sourceLanguage": "cpp"
+                  "sourceLanguage": "c"
                 }
               }
             }
@@ -185,294 +101,14 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/mul/mul_callback.cc"
+                  "uri": "src/arch/zen4/vrs16_exp2f.c"
                 },
                 "region": {
-                  "startLine": 99,
+                  "startLine": 76,
                   "startColumn": 3,
-                  "endLine": 99,
+                  "endLine": 76,
                   "endColumn": 8,
-                  "charOffset": 3113,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "gtests/mul/mul_callback.cc"
-                },
-                "region": {
-                  "startLine": 119,
-                  "startColumn": 3,
-                  "endLine": 119,
-                  "endColumn": 8,
-                  "charOffset": 3513,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "gtests/mul/mul_callback.cc"
-                },
-                "region": {
-                  "startLine": 94,
-                  "startColumn": 3,
-                  "endLine": 94,
-                  "endColumn": 8,
-                  "charOffset": 3013,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "gtests/mul/mul_callback.cc"
-                },
-                "region": {
-                  "startLine": 89,
-                  "startColumn": 3,
-                  "endLine": 89,
-                  "endColumn": 8,
-                  "charOffset": 2907,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "gtests/mul/mul_callback.cc"
-                },
-                "region": {
-                  "startLine": 84,
-                  "startColumn": 3,
-                  "endLine": 84,
-                  "endColumn": 8,
-                  "charOffset": 2801,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "gtests/mul/mul_callback.cc"
-                },
-                "region": {
-                  "startLine": 69,
-                  "startColumn": 3,
-                  "endLine": 69,
-                  "endColumn": 8,
-                  "charOffset": 2377,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "gtests/mul/mul_callback.cc"
-                },
-                "region": {
-                  "startLine": 64,
-                  "startColumn": 3,
-                  "endLine": 64,
-                  "endColumn": 8,
-                  "charOffset": 2249,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
-                    }
-                  },
-                  "sourceLanguage": "cpp"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "include/libm/types.h"
-                },
-                "region": {
-                  "startLine": 39,
-                  "startColumn": 3,
-                  "endLine": 39,
-                  "endColumn": 8,
-                  "charOffset": 1763,
+                  "charOffset": 3039,
                   "charLength": 5,
                   "snippet": {
                     "text": "FIXME",
@@ -505,7 +141,87 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "src/arch/zen5/vrs16_exp2f.c"
+                },
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 3,
+                  "endLine": 76,
+                  "endColumn": 8,
+                  "charOffset": 3034,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/gapi/gtest/src/gtest_all.cc"
+                },
+                "region": {
+                  "startLine": 3772,
+                  "startColumn": 3,
+                  "endLine": 3772,
+                  "endColumn": 7,
+                  "charOffset": 141292,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 119,
@@ -545,7 +261,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 114,
@@ -585,7 +301,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 109,
@@ -625,7 +341,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 104,
@@ -665,7 +381,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 99,
@@ -705,7 +421,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 94,
@@ -745,7 +461,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 89,
@@ -785,7 +501,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 84,
@@ -825,7 +541,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 69,
@@ -865,7 +581,7 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/sub/sub_callback.cc"
+                  "uri": "gtests/mul/mul_callback.cc"
                 },
                 "region": {
                   "startLine": 64,
@@ -905,14 +621,14 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "include/libm/cpu_features.h"
+                  "uri": "gtests/gapi/gbench/src/log.h"
                 },
                 "region": {
-                  "startLine": 225,
-                  "startColumn": 69,
-                  "endLine": 225,
-                  "endColumn": 74,
-                  "charOffset": 9665,
+                  "startLine": 18,
+                  "startColumn": 5,
+                  "endLine": 18,
+                  "endColumn": 10,
+                  "charOffset": 335,
                   "charLength": 5,
                   "snippet": {
                     "text": "FIXME",
@@ -945,14 +661,14 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/mul/mul_callback.cc"
+                  "uri": "gtests/gapi/gbench/src/benchmark_register.cc"
                 },
                 "region": {
-                  "startLine": 109,
+                  "startLine": 248,
                   "startColumn": 3,
-                  "endLine": 109,
+                  "endLine": 248,
                   "endColumn": 8,
-                  "charOffset": 3313,
+                  "charOffset": 8090,
                   "charLength": 5,
                   "snippet": {
                     "text": "FIXME",
@@ -985,54 +701,14 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "include/libm/typehelper-vec.h"
+                  "uri": "gtests/linearfrac/test_linearfrac_data.h"
                 },
                 "region": {
-                  "startLine": 641,
+                  "startLine": 41,
                   "startColumn": 3,
-                  "endLine": 641,
+                  "endLine": 41,
                   "endColumn": 7,
-                  "charOffset": 15798,
-                  "charLength": 4,
-                  "snippet": {
-                    "text": "TODO",
-                    "rendered": {
-                      "text": "TODO",
-                      "markdown": "`TODO`"
-                    }
-                  },
-                  "sourceLanguage": "c"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "include/libm/typehelper-vec.h"
-                },
-                "region": {
-                  "startLine": 54,
-                  "startColumn": 3,
-                  "endLine": 54,
-                  "endColumn": 7,
-                  "charOffset": 2449,
+                  "charOffset": 1983,
                   "charLength": 4,
                   "snippet": {
                     "text": "TODO",
@@ -1465,54 +1141,654 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/include/args.h"
+                  "uri": "gtests/sub/sub_callback.cc"
                 },
                 "region": {
-                  "startLine": 2589,
-                  "startColumn": 34,
-                  "endLine": 2589,
-                  "endColumn": 38,
-                  "charOffset": 85087,
-                  "charLength": 4,
-                  "snippet": {
-                    "text": "TODO",
-                    "rendered": {
-                      "text": "TODO",
-                      "markdown": "`TODO`"
-                    }
-                  },
-                  "sourceLanguage": "c"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "gtests/nextafter/test_nextafter_data.h"
-                },
-                "region": {
-                  "startLine": 48,
+                  "startLine": 119,
                   "startColumn": 3,
-                  "endLine": 48,
+                  "endLine": 119,
+                  "endColumn": 8,
+                  "charOffset": 3513,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/sub/sub_callback.cc"
+                },
+                "region": {
+                  "startLine": 114,
+                  "startColumn": 3,
+                  "endLine": 114,
+                  "endColumn": 8,
+                  "charOffset": 3413,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/sub/sub_callback.cc"
+                },
+                "region": {
+                  "startLine": 109,
+                  "startColumn": 3,
+                  "endLine": 109,
+                  "endColumn": 8,
+                  "charOffset": 3313,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/sub/sub_callback.cc"
+                },
+                "region": {
+                  "startLine": 104,
+                  "startColumn": 3,
+                  "endLine": 104,
+                  "endColumn": 8,
+                  "charOffset": 3213,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/sub/sub_callback.cc"
+                },
+                "region": {
+                  "startLine": 99,
+                  "startColumn": 3,
+                  "endLine": 99,
+                  "endColumn": 8,
+                  "charOffset": 3113,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/sub/sub_callback.cc"
+                },
+                "region": {
+                  "startLine": 94,
+                  "startColumn": 3,
+                  "endLine": 94,
+                  "endColumn": 8,
+                  "charOffset": 3013,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/sub/sub_callback.cc"
+                },
+                "region": {
+                  "startLine": 89,
+                  "startColumn": 3,
+                  "endLine": 89,
+                  "endColumn": 8,
+                  "charOffset": 2907,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/sub/sub_callback.cc"
+                },
+                "region": {
+                  "startLine": 84,
+                  "startColumn": 3,
+                  "endLine": 84,
+                  "endColumn": 8,
+                  "charOffset": 2801,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/sub/sub_callback.cc"
+                },
+                "region": {
+                  "startLine": 69,
+                  "startColumn": 3,
+                  "endLine": 69,
+                  "endColumn": 8,
+                  "charOffset": 2377,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/sub/sub_callback.cc"
+                },
+                "region": {
+                  "startLine": 64,
+                  "startColumn": 3,
+                  "endLine": 64,
+                  "endColumn": 8,
+                  "charOffset": 2249,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/gapi/gbench/src/string_util.cc"
+                },
+                "region": {
+                  "startLine": 137,
+                  "startColumn": 5,
+                  "endLine": 137,
+                  "endColumn": 9,
+                  "charOffset": 4160,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/gapi/gbench/src/benchmark_name.cc"
+                },
+                "region": {
+                  "startLine": 30,
+                  "startColumn": 3,
+                  "endLine": 30,
                   "endColumn": 7,
-                  "charOffset": 2741,
+                  "charOffset": 955,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/gapi/gbench/src/benchmark.cc"
+                },
+                "region": {
+                  "startLine": 456,
+                  "startColumn": 11,
+                  "endLine": 456,
+                  "endColumn": 15,
+                  "charOffset": 15805,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/gapi/gbench/src/benchmark.cc"
+                },
+                "region": {
+                  "startLine": 113,
+                  "startColumn": 3,
+                  "endLine": 113,
+                  "endColumn": 8,
+                  "charOffset": 3890,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/gapi/gbench/src/timers.cc"
+                },
+                "region": {
+                  "startLine": 151,
+                  "startColumn": 5,
+                  "endLine": 151,
+                  "endColumn": 10,
+                  "charOffset": 4908,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/gapi/gbench/src/timers.cc"
+                },
+                "region": {
+                  "startLine": 127,
+                  "startColumn": 5,
+                  "endLine": 127,
+                  "endColumn": 10,
+                  "charOffset": 4060,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/ldexp/test_ldexp_data.h"
+                },
+                "region": {
+                  "startLine": 47,
+                  "startColumn": 3,
+                  "endLine": 47,
+                  "endColumn": 7,
+                  "charOffset": 2549,
                   "charLength": 4,
                   "snippet": {
                     "text": "TODO",
@@ -1545,14 +1821,14 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "gtests/nextafter/test_nextafter_data.h"
+                  "uri": "gtests/ldexp/test_ldexp_data.h"
                 },
                 "region": {
                   "startLine": 35,
                   "startColumn": 3,
                   "endLine": 35,
                   "endColumn": 7,
-                  "charOffset": 1809,
+                  "charOffset": 1797,
                   "charLength": 4,
                   "snippet": {
                     "text": "TODO",
@@ -1562,6 +1838,326 @@
                     }
                   },
                   "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/ldexp/ldexp_callback.cc"
+                },
+                "region": {
+                  "startLine": 153,
+                  "startColumn": 3,
+                  "endLine": 153,
+                  "endColumn": 8,
+                  "charOffset": 4345,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/ldexp/ldexp_callback.cc"
+                },
+                "region": {
+                  "startLine": 148,
+                  "startColumn": 3,
+                  "endLine": 148,
+                  "endColumn": 8,
+                  "charOffset": 4236,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/ldexp/ldexp_callback.cc"
+                },
+                "region": {
+                  "startLine": 143,
+                  "startColumn": 3,
+                  "endLine": 143,
+                  "endColumn": 8,
+                  "charOffset": 4127,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/ldexp/ldexp_callback.cc"
+                },
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 3,
+                  "endLine": 138,
+                  "endColumn": 8,
+                  "charOffset": 4020,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/ldexp/ldexp_callback.cc"
+                },
+                "region": {
+                  "startLine": 133,
+                  "startColumn": 3,
+                  "endLine": 133,
+                  "endColumn": 8,
+                  "charOffset": 3913,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/ldexp/ldexp_callback.cc"
+                },
+                "region": {
+                  "startLine": 128,
+                  "startColumn": 3,
+                  "endLine": 128,
+                  "endColumn": 8,
+                  "charOffset": 3806,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/ldexp/ldexp_callback.cc"
+                },
+                "region": {
+                  "startLine": 123,
+                  "startColumn": 3,
+                  "endLine": 123,
+                  "endColumn": 8,
+                  "charOffset": 3699,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/ldexp/ldexp_callback.cc"
+                },
+                "region": {
+                  "startLine": 118,
+                  "startColumn": 3,
+                  "endLine": 118,
+                  "endColumn": 8,
+                  "charOffset": 3592,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "cpp"
                 }
               }
             }
@@ -1882,6 +2478,446 @@
                     }
                   },
                   "sourceLanguage": "cpp"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/nextafter/test_nextafter_data.h"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 3,
+                  "endLine": 48,
+                  "endColumn": 7,
+                  "charOffset": 2741,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/nextafter/test_nextafter_data.h"
+                },
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 3,
+                  "endLine": 35,
+                  "endColumn": 7,
+                  "charOffset": 1809,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/optimized/vec/vrsa_log1pf.c"
+                },
+                "region": {
+                  "startLine": 62,
+                  "startColumn": 3,
+                  "endLine": 62,
+                  "endColumn": 7,
+                  "charOffset": 2629,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/optimized/vec/vrs8_exp2f.c"
+                },
+                "region": {
+                  "startLine": 83,
+                  "startColumn": 3,
+                  "endLine": 83,
+                  "endColumn": 8,
+                  "charOffset": 3100,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/optimized/vec/vrda_log1p.c"
+                },
+                "region": {
+                  "startLine": 49,
+                  "startColumn": 3,
+                  "endLine": 49,
+                  "endColumn": 7,
+                  "charOffset": 2164,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/gapi/gbench/benchmark.h"
+                },
+                "region": {
+                  "startLine": 344,
+                  "startColumn": 3,
+                  "endLine": 344,
+                  "endColumn": 8,
+                  "charOffset": 11606,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/optimized/vec/vrsa_exp10f.c"
+                },
+                "region": {
+                  "startLine": 61,
+                  "startColumn": 3,
+                  "endLine": 61,
+                  "endColumn": 7,
+                  "charOffset": 2628,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/optimized/vec/vrs4_exp2f.c"
+                },
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 3,
+                  "endLine": 73,
+                  "endColumn": 8,
+                  "charOffset": 2872,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/optimized/vec/vrda_log10.c"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 3,
+                  "endLine": 48,
+                  "endColumn": 7,
+                  "charOffset": 2163,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/optimized/vec/vrda_exp10.c"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 3,
+                  "endLine": 48,
+                  "endColumn": 7,
+                  "charOffset": 2163,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "gtests/gapi/gtest/gtest.h"
+                },
+                "region": {
+                  "startLine": 9924,
+                  "startColumn": 5,
+                  "endLine": 9924,
+                  "endColumn": 10,
+                  "charOffset": 380691,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "c"
                 }
               }
             }
