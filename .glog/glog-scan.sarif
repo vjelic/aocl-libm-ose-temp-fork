@@ -12,43 +12,7 @@
           "informationUri": "https://www.glog.ai",
           "rules": [
             {
-              "id": "glog-d5685a43-94c9-4e3d-93e4-b07f0be858e6",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe vulnerability in the C++ code arises from the use of the `memcpy` function, which is used to copy memory from one location to another. The issue here is that the size of the memory being copied is determined by `sizeof(cpu_features.usable)`, which may not match the actual size of the data in `cpu_features.available`. This can lead to buffer overflows if `cpu_features.available` is smaller than `cpu_features.usable`, potentially causing undefined behavior, data corruption, or security vulnerabilities.\n\n### General Mitigation Advice\n\n1. **Bounds Checking**: Always ensure that the source and destination buffers are of the same size or that the destination buffer is large enough to hold the data being copied.\n2. **Use Safer Functions**: Consider using safer alternatives like `std::copy` or `std::memmove` if overlapping memory regions are possible.\n3. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows and other vulnerabilities in your code.\n4. **Code Reviews**: Regularly perform code reviews to catch potential vulnerabilities early in the development process.\n\n### Source Code Fix Recommendation\n\nTo fix the specific vulnerability, ensure that the size of the data being copied does not exceed the size of the destination buffer. Here is a corrected version of the code:\n\n```cpp\n#include <algorithm> // for std::copy\n\n// Assuming cpu_features.usable and cpu_features.available are arrays\nstd::copy(std::begin(cpu_features.available), std::end(cpu_features.available), std::begin(cpu_features.usable));\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following library dependencies are required:\n\n- `<algorithm>`: This header is required for the `std::copy` function.\n\n### Relevant Resources\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n\n### Common Weakness Enumeration\n\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS121708"
-                ]
-              }
-            },
-            {
-              "id": "glog-c8d455e2-8866-4c7f-8607-dc144553c9c5",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Detected Use of Prohibited C Function (strcat)\" vulnerability arises when the `strcat` function is used in C++ programming. This function is inherently unsafe because it does not perform bounds checking on the destination buffer, which can lead to buffer overflow vulnerabilities. Buffer overflows can be exploited by attackers to execute arbitrary code, cause a program crash, or corrupt data.\n\n### General Mitigation Advice\n\n1. **Use Safer Alternatives**: Replace `strcat` with safer alternatives like `strncat` or C++ string handling functions such as `std::string` and its member functions.\n2. **Bounds Checking**: Always ensure that the destination buffer is large enough to hold the concatenated result, including the null terminator.\n3. **Static Analysis Tools**: Use static analysis tools to detect unsafe function usage in your codebase.\n4. **Code Reviews**: Regularly perform code reviews to catch unsafe practices and educate developers on secure coding standards.\n\n### Source Code Fix Recommendation\n\nReplace the unsafe `strcat` usage with a safer alternative. Here is a recommended fix using `std::string`:\n\n```cpp\n#include <string>\n#include <iostream>\n\n// Original code\n// strcat(ver_string, build_sys_info);\n\n// Fixed code\nstd::string ver_string = \"Version: \";\nstd::string build_sys_info = \"Build Info\";\nver_string += build_sys_info;\n\nstd::cout << ver_string << std::endl;\n```\n\n### Library Dependencies\n\nTo execute the fixed code example properly, the following standard library headers are required:\n\n- `<string>`: For using `std::string`.\n- `<iostream>`: For input and output operations.\n\n### Relevant Resources\n\n- [OWASP Secure Coding Practices - Quick Reference Guide](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)\n- [CWE-242: Use of Inherently Dangerous Function](https://cwe.mitre.org/data/definitions/242.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS141863"
-                ]
-              }
-            },
-            {
-              "id": "glog-02878218-2fe7-4323-ab5c-fc540af3f6eb",
-              "help": {
-                "text": "",
-                "markdown": "### Description\n\nThe \"Detected Use of Prohibited C Function (strcat)\" vulnerability arises when the `strcat` function is used in C++ programming. This function is inherently unsafe because it does not perform bounds checking, which can lead to buffer overflow vulnerabilities. Buffer overflows can be exploited by attackers to execute arbitrary code, cause a program crash, or corrupt data.\n\n### General Mitigation Advice\n\n1. **Use Safer Alternatives**: Replace `strcat` with safer alternatives like `strncat` or C++ string handling functions such as `std::string` or `std::strcat_s` (if available).\n2. **Bounds Checking**: Always ensure that the destination buffer is large enough to hold the concatenated result, including the null terminator.\n3. **Input Validation**: Validate and sanitize all inputs to ensure they do not exceed expected sizes.\n4. **Static Analysis Tools**: Use static analysis tools to detect unsafe function usage and potential buffer overflows.\n\n### Source Code Fix Recommendation\n\nBelow is a code example demonstrating how to replace `strcat` with `strncat` to mitigate the vulnerability:\n\n```cpp\n#include <cstring>  // For strncat\n#include <cstdio>   // For snprintf\n\n// Assuming alm_get_build() returns a const char*\nconst char* alm_get_build() {\n    return \"build_info\";\n}\n\nvoid safe_concatenate(char* ver_string, size_t ver_string_size) {\n    const char* build_info = alm_get_build();\n    // Use strncat to ensure no buffer overflow\n    strncat(ver_string, build_info, ver_string_size - strlen(ver_string) - 1);\n}\n\nint main() {\n    char ver_string[100] = \"Version: \";\n    safe_concatenate(ver_string, sizeof(ver_string));\n    printf(\"%s\\n\", ver_string);\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following standard libraries are required:\n\n- `<cstring>`: Provides the `strncat` function.\n- `<cstdio>`: Provides the `printf` function.\n\n### Relevant Resources\n\n- [OWASP Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
-              },
-              "properties": {
-                "tags": [
-                  "DS141863"
-                ]
-              }
-            },
-            {
-              "id": "glog-8b53a23b-0df6-496d-a55f-82e7e20a7288",
+              "id": "glog-98e2ecb0-fe7c-47ed-91f9-c2fb2b9b197c",
               "help": {
                 "text": "",
                 "markdown": "### Description\n\nThe \"Detection of Prohibited C Function (strcat)\" vulnerability arises when the `strcat` function is used in C++ programming. This function is inherently unsafe because it does not perform bounds checking on the destination buffer, which can lead to buffer overflow vulnerabilities. Buffer overflows can be exploited by attackers to execute arbitrary code, cause a program crash, or corrupt data.\n\n### General Mitigation Advice\n\n1. **Use Safer Alternatives**: Replace `strcat` with safer alternatives like `strncat` or C++ string handling functions such as `std::string::append`.\n2. **Bounds Checking**: Always ensure that the destination buffer is large enough to hold the concatenated result, including the null terminator.\n3. **Static Analysis Tools**: Use static analysis tools to detect unsafe function usage in your codebase.\n4. **Code Reviews**: Regularly conduct code reviews to identify and mitigate potential vulnerabilities.\n\n### Source Code Fix Recommendation\n\nReplace the unsafe `strcat` usage with a safer alternative. Here's how you can modify the code:\n\n```cpp\n#include <iostream>\n#include <string>\n#include <cstring>\n\n// Original unsafe code\n// strcat(ver_string, \"\\n\");\n\n// Safer alternative using std::string\nstd::string ver_string = \"Version 1.0\";\nver_string.append(\"\\n\");\n\n// If you must use C-style strings, ensure proper bounds checking\nchar ver_string_safe[50] = \"Version 1.0\";\nstrncat(ver_string_safe, \"\\n\", sizeof(ver_string_safe) - strlen(ver_string_safe) - 1);\n\nstd::cout << ver_string_safe << std::endl;\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following standard libraries are required:\n\n- `<iostream>`: For input and output stream operations.\n- `<string>`: For using the `std::string` class.\n- `<cstring>`: For C-style string manipulation functions.\n\n### Relevant Resources\n\n- [OWASP C++ Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n- [Common Weakness Enumeration: CWE-120](https://cwe.mitre.org/data/definitions/120.html)"
@@ -60,7 +24,43 @@
               }
             },
             {
-              "id": "glog-90ebf305-c800-43a7-be2b-01a60c015a3f",
+              "id": "glog-adcde730-4853-405e-8af6-9028ea9ff61c",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Use of Prohibited C Function (strcat)\" vulnerability arises when the `strcat` function is used in C++ programming. This function is inherently unsafe because it does not perform bounds checking, which can lead to buffer overflow vulnerabilities. Buffer overflows can be exploited by attackers to execute arbitrary code, cause a program crash, or corrupt data.\n\n### General Mitigation Advice\n\n1. **Use Safer Alternatives**: Replace `strcat` with safer alternatives like `strncat` or C++ string handling functions such as `std::string` or `std::strcat_s` (if available).\n2. **Bounds Checking**: Always ensure that the destination buffer is large enough to hold the concatenated result, including the null terminator.\n3. **Input Validation**: Validate and sanitize all inputs to ensure they do not exceed expected sizes.\n4. **Static Analysis Tools**: Use static analysis tools to detect unsafe function usage and potential buffer overflows.\n\n### Source Code Fix Recommendation\n\nBelow is a code example demonstrating how to replace `strcat` with `strncat` to mitigate the vulnerability:\n\n```cpp\n#include <cstring>  // For strncat\n#include <cstdio>   // For snprintf\n\n// Assuming alm_get_build() returns a const char*\nconst char* alm_get_build() {\n    return \"build_info\";\n}\n\nvoid safe_concatenate(char* ver_string, size_t ver_string_size) {\n    const char* build_info = alm_get_build();\n    // Use strncat to ensure no buffer overflow\n    strncat(ver_string, build_info, ver_string_size - strlen(ver_string) - 1);\n}\n\nint main() {\n    char ver_string[100] = \"Version: \";\n    safe_concatenate(ver_string, sizeof(ver_string));\n    printf(\"%s\\n\", ver_string);\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following standard libraries are required:\n\n- `<cstring>`: Provides the `strncat` function.\n- `<cstdio>`: Provides the `printf` function.\n\n### Relevant Resources\n\n- [OWASP Buffer Overflow](https://owasp.org/www-community/vulnerabilities/Buffer_Overflow)\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS141863"
+                ]
+              }
+            },
+            {
+              "id": "glog-9e7ed523-1033-4576-a2c3-09a1988830fd",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe vulnerability in the C++ code arises from the use of the `memcpy` function, which is used to copy memory from one location to another. The issue here is that the size of the memory being copied is determined by `sizeof(cpu_features.usable)`, which may not match the actual size of the data in `cpu_features.available`. This can lead to buffer overflows if `cpu_features.available` is smaller than `cpu_features.usable`, potentially causing undefined behavior, data corruption, or security vulnerabilities.\n\n### General Mitigation Advice\n\n1. **Bounds Checking**: Always ensure that the source and destination buffers are of the same size or that the destination buffer is large enough to hold the data being copied.\n2. **Use Safer Functions**: Consider using safer alternatives like `std::copy` or `std::memmove` if overlapping memory regions are possible.\n3. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows and other vulnerabilities in your code.\n4. **Code Reviews**: Regularly perform code reviews to catch potential vulnerabilities early in the development process.\n\n### Source Code Fix Recommendation\n\nTo fix the specific vulnerability, ensure that the size of the data being copied does not exceed the size of the destination buffer. Here is a corrected version of the code:\n\n```cpp\n#include <algorithm> // for std::copy\n\n// Assuming cpu_features.usable and cpu_features.available are arrays\nstd::copy(std::begin(cpu_features.available), std::end(cpu_features.available), std::begin(cpu_features.usable));\n```\n\n### Library Dependencies\n\nTo execute the code example properly, the following library dependencies are required:\n\n- `<algorithm>`: This header is required for the `std::copy` function.\n\n### Relevant Resources\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n\n### Common Weakness Enumeration\n\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS121708"
+                ]
+              }
+            },
+            {
+              "id": "glog-80748d3b-271b-4217-9245-10f056cb4793",
+              "help": {
+                "text": "",
+                "markdown": "### Description\n\nThe \"Detected Use of Prohibited C Function (strcat)\" vulnerability arises when the `strcat` function is used in C++ programming. This function is inherently unsafe because it does not perform bounds checking on the destination buffer, which can lead to buffer overflow vulnerabilities. Buffer overflows can be exploited by attackers to execute arbitrary code, cause a program crash, or corrupt data.\n\n### General Mitigation Advice\n\n1. **Use Safer Alternatives**: Replace `strcat` with safer alternatives like `strncat` or C++ string handling functions such as `std::string` and its member functions.\n2. **Bounds Checking**: Always ensure that the destination buffer is large enough to hold the concatenated result, including the null terminator.\n3. **Static Analysis Tools**: Use static analysis tools to detect unsafe function usage in your codebase.\n4. **Code Reviews**: Regularly perform code reviews to catch unsafe practices and educate developers on secure coding standards.\n\n### Source Code Fix Recommendation\n\nReplace the unsafe `strcat` usage with a safer alternative. Here is a recommended fix using `std::string`:\n\n```cpp\n#include <string>\n#include <iostream>\n\n// Original code\n// strcat(ver_string, build_sys_info);\n\n// Fixed code\nstd::string ver_string = \"Version: \";\nstd::string build_sys_info = \"Build Info\";\nver_string += build_sys_info;\n\nstd::cout << ver_string << std::endl;\n```\n\n### Library Dependencies\n\nTo execute the fixed code example properly, the following standard library headers are required:\n\n- `<string>`: For using `std::string`.\n- `<iostream>`: For input and output operations.\n\n### Relevant Resources\n\n- [OWASP Secure Coding Practices - Quick Reference Guide](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)\n- [CWE-242: Use of Inherently Dangerous Function](https://cwe.mitre.org/data/definitions/242.html)"
+              },
+              "properties": {
+                "tags": [
+                  "DS141863"
+                ]
+              }
+            },
+            {
+              "id": "glog-63a25d7d-b24c-4128-a227-b3a5e76cafac",
               "help": {
                 "text": "",
                 "markdown": "### Description\n\nThe use of the `strcat` function in C++ can lead to vulnerabilities such as buffer overflow if not used carefully. The function appends the source string to the destination string, assuming that the destination has enough space to hold the result. If the destination buffer is not large enough, this can lead to overwriting adjacent memory, causing undefined behavior, crashes, or security vulnerabilities.\n\n### General Mitigation Advice\n\n1. **Use Safer Alternatives**: Prefer using safer alternatives like `strncat` or C++ string classes such as `std::string` which handle memory management automatically.\n2. **Buffer Size Management**: Always ensure that the destination buffer is large enough to hold the concatenated result, including the null terminator.\n3. **Input Validation**: Validate input lengths before performing concatenation to ensure they do not exceed buffer sizes.\n4. **Static Analysis Tools**: Use static analysis tools to detect potential buffer overflows and other vulnerabilities in your code.\n\n### Source Code Fix Recommendation\n\nInstead of using `strcat`, you can use `std::string` to safely concatenate strings in C++:\n\n```cpp\n#include <string>\n#include <iostream>\n\nint main() {\n    std::string ver_string = \"Version\";\n    ver_string += \" \";\n    std::cout << ver_string << std::endl;\n    return 0;\n}\n```\n\n### Library Dependencies\n\nTo execute the above code example, the following standard library headers are required:\n\n- `<string>`: For using `std::string`.\n- `<iostream>`: For input and output operations.\n\n### Relevant Resources\n\n- [OWASP C++ Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n- [Common Weakness Enumeration: CWE-120](https://cwe.mitre.org/data/definitions/120.html)\n\nThese links were verified to be active and accessible to anonymous users."
@@ -72,7 +72,7 @@
               }
             },
             {
-              "id": "glog-27daf615-0eab-4075-86ba-26353a2e5b9b",
+              "id": "glog-d8ba6b4b-19e0-42b9-9733-82396e0998c9",
               "help": {
                 "text": "",
                 "markdown": "### Description\n\nThe \"Detected Use of Prohibited C Function (strcat)\" vulnerability arises when the `strcat` function is used in C++ programming. This function is inherently unsafe because it does not perform bounds checking on the destination buffer, which can lead to buffer overflow vulnerabilities. Buffer overflows can be exploited by attackers to execute arbitrary code, cause a program crash, or corrupt data.\n\n### General Mitigation Advice\n\n1. **Use Safer Alternatives**: Replace `strcat` with safer alternatives like `strncat`, `strlcat`, or C++ string handling functions such as `std::string::append`.\n2. **Bounds Checking**: Always ensure that the destination buffer is large enough to hold the concatenated result, including the null terminator.\n3. **Static Analysis Tools**: Use static analysis tools to detect unsafe function usage in your codebase.\n4. **Code Reviews**: Regularly conduct code reviews to identify and mitigate potential vulnerabilities.\n\n### Source Code Fix Recommendation\n\nGiven the specific vulnerability sink:\n\n```cpp\nstrcat(ver_string, alm_get_version());\n```\n\nA safer alternative using `strncat` would be:\n\n```cpp\n#include <cstring> // Required for strncat\n\n// Assuming ver_string is defined and has a known size\nconst size_t ver_string_size = 256; // Example size, adjust as needed\nstrncat(ver_string, alm_get_version(), ver_string_size - strlen(ver_string) - 1);\n```\n\nOr using C++ `std::string`:\n\n```cpp\n#include <string> // Required for std::string\n\nstd::string ver_string;\n// Assuming alm_get_version() returns a const char* or std::string\nver_string += alm_get_version();\n```\n\n### Library Dependencies\n\nFor the code examples provided, the following library dependencies are required:\n\n- `<cstring>`: Required for `strncat`.\n- `<string>`: Required for `std::string`.\n\n### OWASP Resources\n\n- [OWASP Top Ten](https://owasp.org/www-project-top-ten/)\n- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/)\n\n### Common Weakness Enumeration (CWE)\n\n- [CWE-120: Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')](https://cwe.mitre.org/data/definitions/120.html)\n- [CWE-242: Use of Inherently Dangerous Function](https://cwe.mitre.org/data/definitions/242.html)"
@@ -95,248 +95,7 @@
       "language": "en-US",
       "results": [
         {
-          "ruleId": "glog-d5685a43-94c9-4e3d-93e4-b07f0be858e6",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Problematic C function detected (memcpy)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/cpu_features.c"
-                },
-                "region": {
-                  "startLine": 118,
-                  "startColumn": 8,
-                  "endLine": 119,
-                  "endColumn": 42,
-                  "charOffset": 4118,
-                  "charLength": 102,
-                  "snippet": {
-                    "text": "memcpy(&cpu_features.usable[0], &cpu_features.available[0],\n               sizeof(cpu_features.usable)",
-                    "rendered": {
-                      "text": "memcpy(&cpu_features.usable[0], &cpu_features.available[0],\n               sizeof(cpu_features.usable)",
-                      "markdown": "`memcpy(&cpu_features.usable[0], &cpu_features.available[0],\n               sizeof(cpu_features.usable)`"
-                    }
-                  },
-                  "sourceLanguage": "c"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer"
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/cpu_features.c"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 4118,
-                        "charLength": 102
-                      },
-                      "insertedContent": {
-                        "text": "memcpy_s(&cpu_features.usable[0], <size of &cpu_features.usable[0]>,  &cpu_features.available[0], \n               sizeof(cpu_features.usable)"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "BestPractice",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "API.DangerousAPI.ProblematicFunction"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-c8d455e2-8866-4c7f-8607-dc144553c9c5",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "Banned C function detected (strcat)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/alm_main.c"
-                },
-                "region": {
-                  "startLine": 54,
-                  "startColumn": 1,
-                  "endLine": 54,
-                  "endColumn": 35,
-                  "charOffset": 2175,
-                  "charLength": 34,
-                  "snippet": {
-                    "text": "strcat(ver_string, build_sys_info)",
-                    "rendered": {
-                      "text": "strcat(ver_string, build_sys_info)",
-                      "markdown": "`strcat(ver_string, build_sys_info)`"
-                    }
-                  },
-                  "sourceLanguage": "c"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "If the combination of strings is larger than the destination buffer, strcat will cbuffer overflow the destination buffer"
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/alm_main.c"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 2175,
-                        "charLength": 34
-                      },
-                      "insertedContent": {
-                        "text": "strcat_s(ver_string, <size of ver_string>,  build_sys_info)"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "If the combination of strings is larger than the destination buffer, strcat will cbuffer overflow the destination buffer"
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/alm_main.c"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 2175,
-                        "charLength": 34
-                      },
-                      "insertedContent": {
-                        "text": "strlcat(ver_string,  build_sys_info, <size of ver_string>)"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Important",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "API.DangerousAPI.BannedFunction"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-02878218-2fe7-4323-ab5c-fc540af3f6eb",
-          "kind": "fail",
-          "level": "error",
-          "message": {
-            "text": "Banned C function detected (strcat)"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/alm_main.c"
-                },
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 1,
-                  "endLine": 52,
-                  "endColumn": 35,
-                  "charOffset": 2110,
-                  "charLength": 34,
-                  "snippet": {
-                    "text": "strcat(ver_string, alm_get_build()",
-                    "rendered": {
-                      "text": "strcat(ver_string, alm_get_build()",
-                      "markdown": "`strcat(ver_string, alm_get_build()`"
-                    }
-                  },
-                  "sourceLanguage": "c"
-                }
-              }
-            }
-          ],
-          "fixes": [
-            {
-              "description": {
-                "text": "If the combination of strings is larger than the destination buffer, strcat will cbuffer overflow the destination buffer"
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/alm_main.c"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 2110,
-                        "charLength": 34
-                      },
-                      "insertedContent": {
-                        "text": "strcat_s(ver_string, <size of ver_string>,  alm_get_build()"
-                      }
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "description": {
-                "text": "If the combination of strings is larger than the destination buffer, strcat will cbuffer overflow the destination buffer"
-              },
-              "artifactChanges": [
-                {
-                  "artifactLocation": {
-                    "uri": "src/alm_main.c"
-                  },
-                  "replacements": [
-                    {
-                      "deletedRegion": {
-                        "charOffset": 2110,
-                        "charLength": 34
-                      },
-                      "insertedContent": {
-                        "text": "strlcat(ver_string,  alm_get_build(, <size of ver_string>)"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "Important",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "API.DangerousAPI.BannedFunction"
-            ]
-          }
-        },
-        {
-          "ruleId": "glog-8b53a23b-0df6-496d-a55f-82e7e20a7288",
+          "ruleId": "glog-98e2ecb0-fe7c-47ed-91f9-c2fb2b9b197c",
           "kind": "fail",
           "level": "error",
           "message": {
@@ -424,7 +183,248 @@
           }
         },
         {
-          "ruleId": "glog-90ebf305-c800-43a7-be2b-01a60c015a3f",
+          "ruleId": "glog-adcde730-4853-405e-8af6-9028ea9ff61c",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Banned C function detected (strcat)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/alm_main.c"
+                },
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 1,
+                  "endLine": 52,
+                  "endColumn": 35,
+                  "charOffset": 2110,
+                  "charLength": 34,
+                  "snippet": {
+                    "text": "strcat(ver_string, alm_get_build()",
+                    "rendered": {
+                      "text": "strcat(ver_string, alm_get_build()",
+                      "markdown": "`strcat(ver_string, alm_get_build()`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the combination of strings is larger than the destination buffer, strcat will cbuffer overflow the destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/alm_main.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 2110,
+                        "charLength": 34
+                      },
+                      "insertedContent": {
+                        "text": "strcat_s(ver_string, <size of ver_string>,  alm_get_build()"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "description": {
+                "text": "If the combination of strings is larger than the destination buffer, strcat will cbuffer overflow the destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/alm_main.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 2110,
+                        "charLength": 34
+                      },
+                      "insertedContent": {
+                        "text": "strlcat(ver_string,  alm_get_build(, <size of ver_string>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.BannedFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-9e7ed523-1033-4576-a2c3-09a1988830fd",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Problematic C function detected (memcpy)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/cpu_features.c"
+                },
+                "region": {
+                  "startLine": 118,
+                  "startColumn": 8,
+                  "endLine": 119,
+                  "endColumn": 42,
+                  "charOffset": 4118,
+                  "charLength": 102,
+                  "snippet": {
+                    "text": "memcpy(&cpu_features.usable[0], &cpu_features.available[0],\n               sizeof(cpu_features.usable)",
+                    "rendered": {
+                      "text": "memcpy(&cpu_features.usable[0], &cpu_features.available[0],\n               sizeof(cpu_features.usable)",
+                      "markdown": "`memcpy(&cpu_features.usable[0], &cpu_features.available[0],\n               sizeof(cpu_features.usable)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "There are a number of conditions in which memcpy can introduce a vulnerability (mismatched buffer sizes, null pointers, etc.). More secure alternitives perform additional validation of the source and destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/cpu_features.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 4118,
+                        "charLength": 102
+                      },
+                      "insertedContent": {
+                        "text": "memcpy_s(&cpu_features.usable[0], <size of &cpu_features.usable[0]>,  &cpu_features.available[0], \n               sizeof(cpu_features.usable)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "BestPractice",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.ProblematicFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-80748d3b-271b-4217-9245-10f056cb4793",
+          "kind": "fail",
+          "level": "error",
+          "message": {
+            "text": "Banned C function detected (strcat)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/alm_main.c"
+                },
+                "region": {
+                  "startLine": 54,
+                  "startColumn": 1,
+                  "endLine": 54,
+                  "endColumn": 35,
+                  "charOffset": 2175,
+                  "charLength": 34,
+                  "snippet": {
+                    "text": "strcat(ver_string, build_sys_info)",
+                    "rendered": {
+                      "text": "strcat(ver_string, build_sys_info)",
+                      "markdown": "`strcat(ver_string, build_sys_info)`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "fixes": [
+            {
+              "description": {
+                "text": "If the combination of strings is larger than the destination buffer, strcat will cbuffer overflow the destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/alm_main.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 2175,
+                        "charLength": 34
+                      },
+                      "insertedContent": {
+                        "text": "strcat_s(ver_string, <size of ver_string>,  build_sys_info)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "description": {
+                "text": "If the combination of strings is larger than the destination buffer, strcat will cbuffer overflow the destination buffer"
+              },
+              "artifactChanges": [
+                {
+                  "artifactLocation": {
+                    "uri": "src/alm_main.c"
+                  },
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "charOffset": 2175,
+                        "charLength": 34
+                      },
+                      "insertedContent": {
+                        "text": "strlcat(ver_string,  build_sys_info, <size of ver_string>)"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "Important",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "API.DangerousAPI.BannedFunction"
+            ]
+          }
+        },
+        {
+          "ruleId": "glog-63a25d7d-b24c-4128-a227-b3a5e76cafac",
           "kind": "fail",
           "level": "error",
           "message": {
@@ -512,7 +512,7 @@
           }
         },
         {
-          "ruleId": "glog-27daf615-0eab-4075-86ba-26353a2e5b9b",
+          "ruleId": "glog-d8ba6b4b-19e0-42b9-9733-82396e0998c9",
           "kind": "fail",
           "level": "error",
           "message": {

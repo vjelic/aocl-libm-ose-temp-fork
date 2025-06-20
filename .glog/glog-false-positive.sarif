@@ -101,46 +101,6 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "src/arch/zen4/vrs16_exp2f.c"
-                },
-                "region": {
-                  "startLine": 76,
-                  "startColumn": 3,
-                  "endLine": 76,
-                  "endColumn": 8,
-                  "charOffset": 3039,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
-                    }
-                  },
-                  "sourceLanguage": "c"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
                   "uri": "src/optimized/vec/vrsa_log1pf.c"
                 },
                 "region": {
@@ -421,6 +381,46 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
+                  "uri": "src/arch/zen4/vrs16_exp2f.c"
+                },
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 3,
+                  "endLine": 76,
+                  "endColumn": 8,
+                  "charOffset": 3039,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
                   "uri": "src/optimized/vec/vrda_cbrt.c"
                 },
                 "region": {
@@ -581,46 +581,6 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "src/optmized/vec/vrs8_exp2f.c"
-                },
-                "region": {
-                  "startLine": 83,
-                  "startColumn": 3,
-                  "endLine": 83,
-                  "endColumn": 8,
-                  "charOffset": 3100,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
-                    }
-                  },
-                  "sourceLanguage": "c"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
                   "uri": "include/libm/types.h"
                 },
                 "region": {
@@ -661,14 +621,14 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "src/optmized/vec/vrs4_exp2f.c"
+                  "uri": "src/optmized/vec/vrs8_exp2f.c"
                 },
                 "region": {
-                  "startLine": 73,
+                  "startLine": 83,
                   "startColumn": 3,
-                  "endLine": 73,
+                  "endLine": 83,
                   "endColumn": 8,
-                  "charOffset": 2872,
+                  "charOffset": 3100,
                   "charLength": 5,
                   "snippet": {
                     "text": "FIXME",
@@ -709,6 +669,46 @@
                   "endLine": 225,
                   "endColumn": 74,
                   "charOffset": 9665,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/optmized/vec/vrs4_exp2f.c"
+                },
+                "region": {
+                  "startLine": 73,
+                  "startColumn": 3,
+                  "endLine": 73,
+                  "endColumn": 8,
+                  "charOffset": 2872,
                   "charLength": 5,
                   "snippet": {
                     "text": "FIXME",
