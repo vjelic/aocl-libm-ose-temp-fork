@@ -101,6 +101,46 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
+                  "uri": "src/arch/zen4/vrs16_exp2f.c"
+                },
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 3,
+                  "endLine": 76,
+                  "endColumn": 8,
+                  "charOffset": 3039,
+                  "charLength": 5,
+                  "snippet": {
+                    "text": "FIXME",
+                    "rendered": {
+                      "text": "FIXME",
+                      "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
                   "uri": "src/optimized/vec/vrsa_log1pf.c"
                 },
                 "region": {
@@ -181,46 +221,6 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "src/optimized/vec/vrda_log10.c"
-                },
-                "region": {
-                  "startLine": 48,
-                  "startColumn": 3,
-                  "endLine": 48,
-                  "endColumn": 7,
-                  "charOffset": 2163,
-                  "charLength": 4,
-                  "snippet": {
-                    "text": "TODO",
-                    "rendered": {
-                      "text": "TODO",
-                      "markdown": "`TODO`"
-                    }
-                  },
-                  "sourceLanguage": "c"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
                   "uri": "src/optimized/vec/vrda_log1p.c"
                 },
                 "region": {
@@ -275,6 +275,46 @@
                     "rendered": {
                       "text": "FIXME",
                       "markdown": "`FIXME`"
+                    }
+                  },
+                  "sourceLanguage": "c"
+                }
+              }
+            }
+          ],
+          "properties": {
+            "DevSkimSeverity": "ManualReview",
+            "DevSkimConfidence": "High",
+            "tags": [
+              "Hygiene.Comment.Suspicious"
+            ]
+          }
+        },
+        {
+          "ruleId": "DS176209",
+          "kind": "fail",
+          "level": "note",
+          "message": {
+            "text": "Suspicious comment"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/optimized/vec/vrda_log10.c"
+                },
+                "region": {
+                  "startLine": 48,
+                  "startColumn": 3,
+                  "endLine": 48,
+                  "endColumn": 7,
+                  "charOffset": 2163,
+                  "charLength": 4,
+                  "snippet": {
+                    "text": "TODO",
+                    "rendered": {
+                      "text": "TODO",
+                      "markdown": "`TODO`"
                     }
                   },
                   "sourceLanguage": "c"
@@ -395,46 +435,6 @@
                     "rendered": {
                       "text": "TODO",
                       "markdown": "`TODO`"
-                    }
-                  },
-                  "sourceLanguage": "c"
-                }
-              }
-            }
-          ],
-          "properties": {
-            "DevSkimSeverity": "ManualReview",
-            "DevSkimConfidence": "High",
-            "tags": [
-              "Hygiene.Comment.Suspicious"
-            ]
-          }
-        },
-        {
-          "ruleId": "DS176209",
-          "kind": "fail",
-          "level": "note",
-          "message": {
-            "text": "Suspicious comment"
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "src/arch/zen4/vrs16_exp2f.c"
-                },
-                "region": {
-                  "startLine": 76,
-                  "startColumn": 3,
-                  "endLine": 76,
-                  "endColumn": 8,
-                  "charOffset": 3039,
-                  "charLength": 5,
-                  "snippet": {
-                    "text": "FIXME",
-                    "rendered": {
-                      "text": "FIXME",
-                      "markdown": "`FIXME`"
                     }
                   },
                   "sourceLanguage": "c"
@@ -621,14 +621,14 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "src/optmized/vec/vrs4_exp2f.c"
+                  "uri": "include/libm/types.h"
                 },
                 "region": {
-                  "startLine": 73,
+                  "startLine": 39,
                   "startColumn": 3,
-                  "endLine": 73,
+                  "endLine": 39,
                   "endColumn": 8,
-                  "charOffset": 2872,
+                  "charOffset": 1763,
                   "charLength": 5,
                   "snippet": {
                     "text": "FIXME",
@@ -661,14 +661,14 @@
             {
               "physicalLocation": {
                 "artifactLocation": {
-                  "uri": "include/libm/types.h"
+                  "uri": "src/optmized/vec/vrs4_exp2f.c"
                 },
                 "region": {
-                  "startLine": 39,
+                  "startLine": 73,
                   "startColumn": 3,
-                  "endLine": 39,
+                  "endLine": 73,
                   "endColumn": 8,
-                  "charOffset": 1763,
+                  "charOffset": 2872,
                   "charLength": 5,
                   "snippet": {
                     "text": "FIXME",
